@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lab1-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: lab1-api
+  template:
+    metadata:
+      labels:
+        app: lab1-api
+    spec:
+      containers:
+      - name: lab1-api
+        image: nadikauser1/lab-api:v1
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8000
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8000
+          timeoutSeconds: 2
+          periodSeconds: 5
+          failureThreshold: 3
