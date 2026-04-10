@@ -4,7 +4,7 @@ app = FastAPI(title="Docker Desktop K8s Lab from Nadezhda")
 
 @app.get("/")
 def root():
-    return {"msg": "hello from docker-desktop k8s"}
+    return {"msg": "hello from nadezhda docker-desktop k8s"}
 
 @app.get("/health")
 def health():
