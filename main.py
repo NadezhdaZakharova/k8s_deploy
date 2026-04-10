@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-app = FastAPI(title="Docker Desktop K8s Lab from Nadezhda")
+app = FastAPI(title="Docker Desktop K8s Lab from Nadezhda.v2")
 
 @app.get("/")
 def root():
